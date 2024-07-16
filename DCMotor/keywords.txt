@@ -1,0 +1,9 @@
+DCMotor	KEYWORD1
+
+init	KEYWORD2
+
+moveForward	KEYWORD2
+
+moveBackward	KEYWORD2
+
+halt	KEYWORD2
