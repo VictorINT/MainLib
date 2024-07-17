@@ -31,3 +31,7 @@ void Encoder::update()
     }
     _lastA = currentA;
 }
+
+void Encoder::reset(){
+    _position=0;
+}
