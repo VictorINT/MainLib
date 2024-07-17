@@ -11,6 +11,7 @@ public:
     void init();
     int read();
     void update();
+    void reset();
 
 private:
     uint8_t _pinA, _pinB;
