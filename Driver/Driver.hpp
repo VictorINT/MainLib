@@ -33,11 +33,11 @@ class Driver
 {
 public:
     Driver(Encoder &enc, DCMotor &dc);
-    void goFront(int speed, int distance);
-    void goBack(int speed, int distance);
+    virtual void goFront(int speed, int distance);
+    virtual void goBack(int speed, int distance);
     void stop();
 
-private:
+protected:
     Encoder &enc;
     DCMotor &dc;
 };
