@@ -35,7 +35,7 @@ public:
     Driver(Encoder &enc, DCMotor &dc);
     virtual void goFront(int speed, int distance);
     virtual void goBack(int speed, int distance);
-    void stop();
+    virtual void stop();
 
 protected:
     Encoder &enc;

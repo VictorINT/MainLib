@@ -7,7 +7,7 @@ Driver::Driver(Encoder &enc, DCMotor &dc)
     dc.init();
 }
 
-virtual void Driver::goFront(int speed, int distance)
+void Driver::goFront(int speed, int distance)
 {
     enc.reset();
     int nrthicks = round((float)((distance * 119) / 19.154) * KP);
@@ -19,7 +19,7 @@ virtual void Driver::goFront(int speed, int distance)
     }
 }
 
-virtual void Driver::goBack(int speed, int distance)
+void Driver::goBack(int speed, int distance)
 {
     enc.reset();
     int nrthicks = round((float)((distance * 119) / 19.154) * KP);

@@ -1,7 +1,7 @@
 #include "DoubleDriver.hpp"
 
 DoubleDriver::DoubleDriver(Encoder &enc, DCMotor &dc, Encoder &encoder2, DCMotor &motor2)
-    : encoder2(encoder2), motor2(motor2)
+    : Driver(enc, dc), encoder2(encoder2), motor2(motor2)
 {
     enc.init();
     dc.init();
@@ -9,7 +9,7 @@ DoubleDriver::DoubleDriver(Encoder &enc, DCMotor &dc, Encoder &encoder2, DCMotor
     motor2.init();
 }
 
-virtual void DoubleDriver::goFront(int speed, int distance)
+void DoubleDriver::goFront(int speed, int distance)
 {
     enc.reset();
     encoder2.reset();
@@ -25,7 +25,7 @@ virtual void DoubleDriver::goFront(int speed, int distance)
     }
 }
 
-virtual void DoubleDriver::goBack(int speed, int distance)
+void DoubleDriver::goBack(int speed, int distance)
 {
     enc.reset();
     encoder2.reset();
@@ -45,6 +45,12 @@ void DoubleDriver::rotate(int distance, int angle)
 {
     enc.reset();
     encoder2.reset();
+}
+
+void DoubleDriver::stop()
+{
+    dc.halt();
+    motor2.halt();
 }
 
 /**
