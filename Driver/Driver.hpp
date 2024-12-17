@@ -20,14 +20,14 @@
 
 /**
  * @brief
- *      I was thinking that I could transform this Driver class intro simply encoder+motor and then
+ *      I was thinking that I could transform this Driver class into simply encoder+motor and then
  * create other classes that inheriate and override functions of this class like DoubleDriver and
  * QuadDriver.
  *      This way, the function rotate is different for each of them and cannot be created with one wheel,
  * and so I will not be including it in this file.
  */
 
-#define KP 0.89
+#define KP 0.89 //! TO BE REMOVED LATER.
 
 class Driver
 {

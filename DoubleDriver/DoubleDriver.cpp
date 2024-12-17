@@ -14,7 +14,8 @@ void DoubleDriver::goFront(int speed, int distance)
     enc.reset();
     encoder2.reset();
     int nrthicks = round((float)((distance * 119) / 19.154) * KP);
-    while ((enc.read() + encoder2.read()) / 2 < nrthicks)
+    // while ((enc.read() + encoder2.read()) / 2 < nrthicks) // mean between two of them
+    while (enc.read() < nrthicks)
     {
         dc.moveForward(speed);
         motor2.moveForward(speed);
@@ -30,7 +31,7 @@ void DoubleDriver::goBack(int speed, int distance)
     enc.reset();
     encoder2.reset();
     int nrthicks = round((float)((distance * 119) / 19.154) * KP);
-    while ((enc.read() + encoder2.read()) / 2 < nrthicks)
+    while (enc.read() < nrthicks)
     {
         dc.moveBackward(speed);
         motor2.moveBackward(speed);
@@ -60,5 +61,26 @@ void DoubleDriver::stop()
  *      ! formula: nr degrees to rotate = ((nr thicks for 90 degrees) * the angle to rotate)/90
  *  TODO:
  *  2. instad of using exact number, pass to constructor of Driver also wheel diameter and nr of thicks per full rotation
+ *
+ */
+
+/**
+ * @brief
+ * TODO:
+ * Implement Localizer class that takes encoder/s and gives you position based to the starting point
+ *  ! getPos() returns -> (x,y) coords.
+ *  ! getDistance() returns -> distance from origin to this point
+ *  ! updatePos() updates encoders
+ *  ! setStartingPosition() -> sets startX and startY to custome coords.
+ *
+ */
+
+/**
+ * @brief
+ * TODO:
+ *  1. class PID? with kp, kd, ki configured.
+ * TODO:
+ *  2. You can pass it to Driver or smth and it uses it + The Localizer to move to a certain point
+ *  TODO: (x,y) from (x0,y0) with great accuracy.
  *
  */

@@ -1,0 +1,9 @@
+Localizer	KEYWORD1
+
+getPos	KEYWORD2
+
+updatePos	KEYWORD2
+
+setInitPos	KEYWORD2
+
+getDistance	KEYWORD2

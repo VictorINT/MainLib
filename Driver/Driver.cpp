@@ -7,6 +7,8 @@ Driver::Driver(Encoder &enc, DCMotor &dc)
     dc.init();
 }
 
+// define variables
+
 void Driver::goFront(int speed, int distance)
 {
     enc.reset();
