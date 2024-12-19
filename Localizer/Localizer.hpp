@@ -2,6 +2,8 @@
 #define LOCALIZER_HPP
 
 #include <Arduino.h>
+#include <math.h>
+#include <ROBOT.hpp>
 
 sturct pos
 {
@@ -13,7 +15,7 @@ typedef struct pos pos;
 class Localizer
 {
 public:
-    Localizer(Encoder **encoderArray, int nrOfEncoders, char EncoderConfig); // passing the pointer to array of Encoder objects.
+    Localizer();
 
     pos getPos();
 
@@ -22,9 +24,9 @@ public:
     float getDistance(pos actual);
 
 private:
-    Encoder **encArray;
-    int nrEncs;
+    int _lastPosition[NR_OF_ENCODERS];
     pos _initPos;
+    float rotateAngle;
 };
 
 #endif
