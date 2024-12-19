@@ -1,9 +1,0 @@
-Geometry	KEYWORD1
-
-Vector2D	KEYWORD2
-
-Rotation2D	KEYWORD2
-
-Point	KEYWORD2
-
-getDistance	KEYWORD2
